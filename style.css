@@ -1,0 +1,194 @@
+/* -------------------------
+   Colour + Type System
+------------------------- */
+
+:root {
+    --brand: #2563eb;
+    --brand-dark: #1d4ed8;
+    --ink: #172033;
+    --background: #f8fafc;
+    --white: #ffffff;
+    --border: #e2e8f0;
+
+    --font-main: Arial, Helvetica, sans-serif;
+}
+
+/* -------------------------
+   Base Styles
+------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    color: var(--ink);
+    background: var(--background);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+/* -------------------------
+   Header + Flexbox
+------------------------- */
+
+header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    color: var(--brand);
+    font-size: 1.5rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--brand);
+}
+
+/* -------------------------
+   Sections
+------------------------- */
+
+section {
+    padding: 4rem 0;
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+#about {
+    max-width: 900px;
+}
+
+/* -------------------------
+   Projects - CSS Grid
+------------------------- */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.project-card a {
+    color: var(--brand);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    color: var(--brand-dark);
+    text-decoration: underline;
+}
+
+/* -------------------------
+   Footer
+------------------------- */
+
+footer {
+    background: var(--ink);
+    color: var(--white);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+footer h2 {
+    margin-top: 0;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.contact-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-links a:hover {
+    color: #93c5fd;
+}
+
+.copyright {
+    margin-bottom: 0;
+    opacity: 0.8;
+}
+
+/* -------------------------
+   Responsive Design
+------------------------- */
+
+@media (min-width: 700px) {
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
